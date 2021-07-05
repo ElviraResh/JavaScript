@@ -107,4 +107,3 @@ const sumOfConsecutiveNumbers = (begin, end) => {
 }
 
 console.log(sumOfConsecutiveNumbers(2, 6));
-
