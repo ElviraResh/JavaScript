@@ -243,12 +243,13 @@ console.log(f()); */
 
 // Задача 1
 // Реализуйте функцию, которая делает заглавной первую букву каждого слова в предложении
-/* 
-let solution = 'hello, world!';
+
+/* let solution = 'hello, world!';
 let result = '';
 
 for(let i = 0; i < solution.length; i++) {
     if(i === 0) {
+        debugger
         result += solution[i].toUpperCase();
     }else if(solution[i-1] === ' ') {
         result += solution[i].toUpperCase()
@@ -257,11 +258,77 @@ for(let i = 0; i < solution.length; i++) {
     }
 }
 
-console.log(result);
- */
+console.log(result); */
+
+/* const solution = str => {
+    let pieces = str.split('');
+    for (var i = 0; i < pieces.length; i++) {
+        var j = pieces[i].charAt(0).toUpperCase();
+        pieces[i] = j + pieces[i].substr(1);
+    }
+    return pieces.join(" ");
+}
+console.log(solution('hello, world!')); */
+
+
+/* const emails = ['VASYA@gmAil.com', 'iGoR@yandex.RU', 'netiD@hot.CoM' ];
+console.log(emails);
+for (let i = 0; i < emails.length; i += 1) {
+    const email = emails[i];
+    
+    const normalizedEmail = email.toLowerCase();
+    emails[i] = normalizedEmail;
+}
+console.log(emails); */
 
 // Реализуйте getWeekends(), которая возвращает массив из двух элементов - названий выходных дней на английском. Функция принимает на вход параметр - формат возврата. Всего есть два возможных значения: 
 // 'long' (по умолчанию) - массив содержит значения saturday и sunday
 // 'short' - массив содержит значения sat и sun
 // getWeekends('long');
 // getWeekends('short');
+
+// 
+
+/* const cities = ['moscow', 'london', 'berlin', 'porto'];
+
+const get = (arr, index, defaultValue = null) => {
+    if (index >= arr.length || index < 0) {
+        return defaultValue;
+    }
+    return arr[index];
+}
+
+console.log(get(cities,10)); */
+
+// ссылки при работе с массивами
+// let, const хранят два вида данных: примитивные (числа, строки, булеан) и ссылочные (объекты)
+
+/* const items = [1, 2];
+const items2 = items; // ссылаются на один и тот же массив
+
+items2.push(3);
+
+console.log(items2); // [1, 2, 3]
+console.log(items); // [1, 2, 3] */
+
+/* const f = coll => coll.push('wow');
+const items = ['one'];
+f(items);
+console.log(items); // ['one', 'wow'] */
+
+// переворот массива
+
+const names = ['john', 'smith', 'karl', 'asd']; 
+// reverse(); // ['karl', 'smith', 'john'];
+const reverse = coll => {
+    const lastIndex = coll.length - 1;
+    const middleIndex = lastIndex / 2;
+    for (let i = 0; i < middleIndex; i += 1) {
+        const mirrorIndex = lastIndex - i;
+        const temp = coll[i];
+        coll[i] = coll[mirrorIndex];
+        coll[mirrorIndex] = temp;
+    }
+};
+reverse(names);
+console.log(names);
