@@ -116,3 +116,7 @@ function f() {
 // какие-то выражения 
 } 
 ```
+
+[выражения и инструкции](https://y-doka.site/js/doka/expressions-vs-statements/)
+
+[return](https://y-doka.site/js/doka/return/)
