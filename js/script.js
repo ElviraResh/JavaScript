@@ -42,9 +42,19 @@ console.log(name); // Amazon */
 
 // с массивами такое правило не работает, потому что массивы могут меняться: увеличиваться, уменьшаться, изменять значения по индексам.
 // константа хранит ссылку на данные, а не сами данные. Это значит что менять данные можно, но нельзя заменить ссылку
-const animals = [ 'cats', 'dogs', 'birds'];
+/* const animals = [ 'cats', 'dogs', 'birds'];
 animals[0] = 'horses'; // меняем первый элемент массива
 animals[3] = 'cats'; // добавление данных в массив
 console.log(animals);
 
-animals = [ 'cats', 'fish']; // type error, так как идет замена константы
+animals = [ 'cats', 'fish']; // type error, так как идет замена константы */
+
+/* // перебор в обратном порядке
+const userNames = [ 'petya', 'vasya', 'evgeny' ];
+// начальное значение счетчика i = 0
+// условие остановки i < userNames.length - выполняется перед каждой итерацией
+// изменение счетчика i += 1 - выполняется после каждой итерации.
+for (let i = 0; i < userNames.length; i += 1) {
+    const index = (userNames.length - 1) - i;
+    console.log(userNames[index]);
+} */
