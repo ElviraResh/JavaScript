@@ -35,6 +35,37 @@ console.log(animals[i+j]); // birds */
 // нахождение последнего элемента
 // console.log(animals[animals.length - 1]);
 
+// ссылки при работе с массивами
+// let, const хранят два вида данных: примитивные (числа, строки, булеан) и ссылочные (объекты)
+
+/* const items = [1, 2];
+const items2 = items; // ссылаются на один и тот же массив
+items2.push(3);
+console.log(items2); // [1, 2, 3]
+console.log(items); // [1, 2, 3] */
+
+/* const f = coll => coll.push('wow');
+const items = ['one'];
+f(items);
+console.log(items); // ['one', 'wow'] */
+
+// переворот массива
+
+/* const names = ['john', 'smith', 'karl', 'asd']; 
+// reverse(); // ['karl', 'smith', 'john'];
+const reverse = coll => {
+    const lastIndex = coll.length - 1;
+    const middleIndex = lastIndex / 2;
+    for (let i = 0; i < middleIndex; i += 1) {
+        const mirrorIndex = lastIndex - i;
+        const temp = coll[i];
+        coll[i] = coll[mirrorIndex];
+        coll[mirrorIndex] = temp;
+    }
+};
+reverse(names);
+console.log(names); */
+
 // Модификации
 /* const name = 'Amazon';
 console.log(name.toUpperCase()); // AMAZON
