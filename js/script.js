@@ -244,22 +244,20 @@ console.log(f()); */
 // Задача 1
 // Реализуйте функцию, которая делает заглавной первую букву каждого слова в предложении
 
-/* let solution = 'hello, world!';
-let result = '';
-
-for(let i = 0; i < solution.length; i++) {
-    if(i === 0) {
-        debugger
-        result += solution[i].toUpperCase();
-    }else if(solution[i-1] === ' ') {
-        result += solution[i].toUpperCase()
-    }else {
-        result +=solution[i]
+// Решение из инета, доработанное мной
+/* const solution = str => {
+    let result = '';
+    for(let i = 0; i < str.length; i++) {
+        (i === 0) ? result += str[i].toUpperCase() : // первая буква в слове (индекс 0)
+        (str[i - 1] === ' ') ? result += str[i].toUpperCase() : // пробел в строке 
+        result += str[i];
     }
+    return result;
 }
 
-console.log(result); */
+console.log(solution('hello, world!')); */
 
+// Решение от преподавателя
 /* const solution = str => {
     let pieces = str.split('');
     for (var i = 0; i < pieces.length; i++) {
@@ -287,7 +285,22 @@ console.log(emails); */
 // getWeekends('long');
 // getWeekends('short');
 
-// 
+const getWeekends = length => {
+    const long = ['saturday', 'sunday'];
+    const short = ['sat', 'sun'];
+    switch(length) {
+        case 'long':
+            return long;
+        case 'short':
+            return short;
+        default:
+            return length;
+    }
+};
+
+console.log(getWeekends('long'));
+console.log(getWeekends('short'));
+console.log(getWeekends('world'));
 
 /* const cities = ['moscow', 'london', 'berlin', 'porto'];
 
@@ -318,7 +331,7 @@ console.log(items); // ['one', 'wow'] */
 
 // переворот массива
 
-const names = ['john', 'smith', 'karl', 'asd']; 
+/* const names = ['john', 'smith', 'karl', 'asd']; 
 // reverse(); // ['karl', 'smith', 'john'];
 const reverse = coll => {
     const lastIndex = coll.length - 1;
@@ -331,4 +344,4 @@ const reverse = coll => {
     }
 };
 reverse(names);
-console.log(names);
+console.log(names); */
