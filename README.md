@@ -1,4 +1,4 @@
-# Функции #
+# [Функции](https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions) 
 
 Любая **функция это объект**, и следовательно ею можно манипулировать как объектом, в частности:
 
@@ -45,8 +45,8 @@ function myFunc(theObject) {
   theObject.make = 'Toyota';
 }
 
-var mycar = {make: 'Honda', model: 'Accord', year: 1998};
-var x, y;
+let mycar = {make: 'Honda', model: 'Accord', year: 1998};
+let x, y;
 
 x = mycar.make; // x получает значение "Honda"
 
@@ -60,13 +60,13 @@ y = mycar.make; // y получает значение "Toyota"
 Функция вида "function declaration statement" по синтаксису является инструкцией (statement), еще функция может быть вида "function definition  expression". Такая функция может быть **анонимной** (она не имеет имени).
 
 ```sh
-var square = function(number) { return number * number; };
-var x = square(4); // x получает значение 16
+let square = function(number) { return number * number; };
+let x = square(4); // x получает значение 16
 ```
 
 Однако, имя может быть и присвоено для вызова самой себя внутри самой функции и для отладчика (debugger) для идентифицированные функции в стек-треках (stack traces; "trace" — "след" / "отпечаток").
 
-var factorial = function fac(n) { return n < 2 ? 1 : n * fac(n - 1); };
+let factorial = function fac(n) { return n < 2 ? 1 : n * fac(n - 1); };
 
 console.log(factorial(3));
 Copy to Clipboard
@@ -74,7 +74,7 @@ Copy to Clipboard
 
 ```sh
 function map(f, a) {
-  var result = [], // Create a new Array
+  let result = [], // Create a new Array
       i;
   for (i = 0; i != a.length; i++)
     result[i] = f(a[i]);
@@ -86,17 +86,17 @@ function map(f, a) {
 
 ```sh
 function map(f, a) {
-  var result = []; // Create a new Array
-  var i; // Declare variable
+  let result = []; // Create a new Array
+  let i; // Declare variable
   for (i = 0; i != a.length; i++)
     result[i] = f(a[i]);
       return result;
 }
-var f = function(x) {
+let f = function(x) {
    return x * x * x;
 }
-var numbers = [0, 1, 2, 5, 10];
-var cube = map(f,numbers);
+let numbers = [0, 1, 2, 5, 10];
+let cube = map(f,numbers);
 console.log(cube);
 ```
 
@@ -105,10 +105,11 @@ console.log(cube);
 В JavaScript функция может быть объявлена с условием. Например, следующая функция будет присвоена переменной myFunc только, если num равно 0: 
 
 ```sh
-var myFunc;
+let myFunc;
 if (num === 0) {
   myFunc = function(theObject) {
     theObject.make = 'Toyota';
   }
 }
 ```
+[еще функции](https://learn.javascript.ru/function-basics)
