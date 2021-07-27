@@ -8,11 +8,11 @@
 
 Области видимости можно представить как коробки, в которые мы кладём переменные. Переменные, которые лежат в одной коробке, могут общаться друг с другом.
 
-![](C:\Users\EReshetnikova\Documents\GitHub\JavaScript\image\1.jpg)
+![](https://github.com/ElviraResh/JavaScript/blob/Task-8/image/1.png)
 
 Переменные также могут получить доступ к переменным из коробки, в которой лежит их коробка.
 
-![](C:\Users\EReshetnikova\Documents\GitHub\JavaScript\image\2.jpg)
+![](https://github.com/ElviraResh/JavaScript/blob/Task-8/image/2.png)
 
 Области видимости помогают скрывать переменные от нежелательного доступа, управлять побочными эффектами и разбивать код на смысловые блоки.
 
