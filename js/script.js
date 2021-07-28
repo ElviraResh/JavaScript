@@ -89,3 +89,78 @@ for (let i = 0; i < userNames.length; i += 1) {
     const index = (userNames.length - 1) - i;
     console.log(userNames[index]);
 } */
+
+// Задача. Ф-цию, которая принимает на вход массив и строковый префикс, и возвращает новый массив,
+// в котором каждому элементу исходного массива добавляется переданный префикс. Ф-ция предназначена для работы со строковыми эл-ми.
+// newNames(); // ['Mr john', 'Mr smith', 'Mr karl']
+
+/* const names = ['john', 'smith', 'karl'];
+
+const newNames = (arrays, prefix) => {
+    let result = [];
+    for (let i = 0; i <= arrays.length - 1; i++ ) {
+        // prefixArays = `${prefix} ${arrays[i]}`;
+        // result.push(prefixArays);
+        result[i] = `${prefix} ${arrays[i]}`;
+    }
+    return result;
+};
+
+console.log(newNames(names, 'Mr')); */
+
+// Агрегация - вычисления, которые строятся на основе всего набора данных (поиск минимального, среднего, суммы, макс)
+// Поиск максимального значения в массиве.
+// console.log(calculateMax([3, 2, -10, 38, 0])); // 38
+// console.log(calculateMax([])); null
+
+/* const calculateMax = arr => {
+    // если [], то не можем искать максимальное значение
+    if (arr.length === 0) {
+        return null;
+    }
+    // сравнение элементов нужно начать с какого-то первого эл-та
+    let max = arr[0];
+    // начинаем обход со второго элемента
+    for (let i = 1; i < arr.length; i++) {
+        const currentElement = arr[i];
+        if (currentElement > max) {
+            max = currentElement;
+        }
+    }
+    return max;
+};
+console.log(calculateMax([3, 2, -10, 38, 0, 50, 70, 200])); */
+
+// поиск суммы в массиве
+/* const calculateSum = arr => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+console.log(calculateSum([3, 2, -10, 38, 0])); */
+
+// процесс поиска вычислений 
+// let sum = 0;
+// sum = sum + 3; // 3
+// sum = sum + 2; // 5
+// sum = sum + -10; // -5
+// sum = sum + 38; // 33
+// sum = sum + 0; // 33
+
+
+// сумма всех элементов, которые делится на 3
+/* const calculateSum = arr => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        const value = arr[i];
+        if (value % 3 === 0) {
+            sum += value;
+        }
+    }
+    return sum;
+}
+
+console.log(calculateSum([3, 2, -10, 38, 0])); */
