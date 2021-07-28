@@ -208,7 +208,7 @@ console.log(sum(50)); // 10 */
 
 /* простое число - целое положительное число, имеющее ровно два различных натуральных делителя - единицу и самого себя */
 
-const simpleNum = num => {
+/* const simpleNum = num => {
     let answer = 'true';
     for (let i = 2; i < num; i++) {
         if (num % i === 0) {
@@ -218,6 +218,136 @@ const simpleNum = num => {
     return answer;
 }
 
-console.log(simpleNum(5));
+console.log(simpleNum(5)); */
 
 // линтер - это утилита, которая проверяет код на соответствие стандартам
+
+// цикл for...of
+/* const userNames = ['petya', 'vasya', 'evgeny'];
+
+for (const name of userNames) {
+    console.log(name);
+} */
+
+// обход массива через один элемент
+/* for (let i = 0; i < items.length; i++) {
+    // какой-то кодж
+} */
+
+// обратный обход массива 
+/* for (let i = items.length - 1; i >= 0; i -= 1) {
+    // какой-то код
+} */
+
+// перебор чисел в определенном диапозоне
+/* for (let i = 5; i < 10; i++) {
+    // какой-то код
+} */
+
+// во время обхода изменение исходного массива
+/* for(let i = 0; i < items.length; i++) {
+    items[i] = // что-то делаем
+}  */
+
+// sum
+/* const calculateSum = arr => {
+    let sum = 0;
+    for (const value of arr) {
+        sum += value;
+    }
+    return sum;
+}
+
+console.log(calculateSum([5, 7, 6, 9, 10])); */
+
+/* const greeting = 'Hello';
+
+for (const symbol of greeting) {
+    console.log(symbol);
+} */
+// результат данного перебора
+// H
+// e
+// l
+// l
+// o
+
+// Задача. Ф-ия, которая высчитывает среднее арифметическое элементов переданного массива
+// const temperatures1 = [37.5, 34, 39.3, 40, 38.7, 41.5];
+// calculateAverage(temperatures1); // 38.5
+// const temperatures2 = [];
+// calculateAverage(temperatures2); // null
+
+/* const calculateAverage = temperatures => {
+    const arrLength = temperatures.length;
+    if (arrLength === 0) {
+        return null;
+    }
+    let sum = 0;
+    for (const values of temperatures) {
+        sum += values;
+    }
+    return sum/arrLength;
+}
+
+console.log(calculateAverage([37.5, 34, 39.3, 40, 38.7, 41.5])); */
+
+// удаление элементов из массива
+
+// это корявый способ удаления
+/* const numbers = [1, 10];
+delete numbers[0];
+console.log(numbers); // [<1 empty item>, 10]
+console.log(numbers.length); // 2 */
+
+// [0, 1, false, null, true, 'wow', null]; // операция compact - удаление null значений из массива
+//  ! изменение массива должно трансформироваться в создание нового массива, в котором отсутствуют удаляемые элементы
+/* const arr = [0, 1, false, null, true, 'wow', null];
+const compact = arr => {
+    // инициализация результата
+    const result = [];
+
+    for (const item of arr) {
+        // проверка значения
+        if (item !== null) {
+            result.push(item);
+        }
+    }
+    return result;
+}
+
+console.log(compact(arr));
+console.log([]); */
+
+// пример агригации. удаление элементов по определенным условиям массива
+
+// break и continue - не являются необходимостью
+// break производит выход из цикла (не из функции!)
+/* const arr = [0, 1, false, null, true, 'wow', null];
+for (const item of arr) {
+    if (item === true) {
+        break;
+    }
+    console.log(item);
+} */
+
+// continue - позволяет пропустить итерацию цикла
+const arr = [0, 1, false, null, true, 'wow', null];
+const compact = arr => {
+    // инициализация результата
+    const result = [];
+
+    for (const item of arr) {
+        if (item === null) {
+            continue;
+        }
+        // проверка значения
+        //if (item !== null) {
+        //    result.push(item);
+        //}
+        result.push(item);
+    }
+    return result;
+};
+
+console.log(compact(arr));
