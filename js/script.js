@@ -332,7 +332,7 @@ for (const item of arr) {
 } */
 
 // continue - позволяет пропустить итерацию цикла
-const arr = [0, 1, false, null, true, 'wow', null];
+/* const arr = [0, 1, false, null, true, 'wow', null];
 const compact = arr => {
     // инициализация результата
     const result = [];
@@ -350,4 +350,109 @@ const compact = arr => {
     return result;
 };
 
-console.log(compact(arr));
+console.log(compact(arr)); */
+
+// Задача 
+/* Если задано целое число x, верните, true если x это целое число палиндрома.
+Целое число является палиндромом, когда оно читается так же, как вперед и назад. Например, 121 это палиндром, а число 123 нет.
+Пример 1:
+Вход: x = 121
+ Выход: истина
+Пример 2:
+Ввод: x = -121
+ Выход: false
+ Объяснение: Слева направо, читается -121. Справа налево становится 121-. Следовательно, это не палиндром.
+Пример 3:
+Ввод: x = 10
+ Выход: false
+ Объяснение: 01 считывается справа налево. Следовательно, это не палиндром.
+Пример 4:
+Ввод: x = -101
+ Выход: ложь */
+
+/* const palindrome = num => {
+    if (num < 0) {
+        return false;
+    }
+    const str = num.toString(); // перевод числа в строку
+    // 
+    if (str === str.split('').reverse().join('')) {
+        return true;
+    } else {
+        return false;
+    } 
+} */
+
+// дополненное решение из инета условием проверки отрицательного числа, но сложное для понимания
+// при отладке кода не показывает как строку переворачивает
+/* const palindrome = num => {
+    if (num < 0) {
+        return false;
+    };
+    if ((num += "").split("").reverse().join("") === num) {
+        return true;
+    } else {
+        return false;
+    }
+} */
+
+/* console.log(palindrome(121));
+console.log(palindrome(-121));
+console.log(palindrome(10));
+console.log(palindrome(-101)); */ 
+
+// решение из инета
+/* const IsPalindrome = num => (num+="").split("").reverse().join("") === num;
+console.log(IsPalindrome(23));     // false
+console.log(IsPalindrome(-121));    // true
+console.log(IsPalindrome(9889));   // true
+console.log(IsPalindrome(-989));    // true
+console.log(IsPalindrome(1));      // true */
+
+// метод splice - изменяет содержимое массива путем удаления или замены существующих элементов и/или добавление новых элементов на месте
+
+// синтаксис
+//splice(start) 
+//start - это индекс, с которого начинается длина массива, если start > arr.length то 
+//из этого массива ни один элемент не будет удален, а метод будет вести себя как функция добавления
+//при отрицательном значении start изменение массива начнется с конца
+//splice(start, deleteCount) 
+//deleteCount (указывают по желанию) - целое число, указывающее элементов в массиве, из которых нужно удалить start
+//если deleteCount опущено, или deleteCount >= arr.length - start => то все элементы от start до arr.length будут удалены
+//если deleteCount <= 0, то элементы не удаляется, но придется дописать item
+//splice(start, deleteCount, item1)
+//splice(start, deleteCount, item1, item2, itemN)
+// itemN - это элементы, которые добавятся в массив
+
+/* // пример 
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// вставляет в индекс 1
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// заменяет 1 элемент с индексом 4
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+months.splice(5, 2, 'June', 'July'); 
+// вставляет 2 элемента с индексом 5 и 6 
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May", "June", "July"]
+console.log(months.length); // 7 */
+
+// практическая задача (придуманная на аналогии с примером выше)
+// Маша забыла как по порядку идут месяца и составила неправильный список
+/* const orderMonths = ['September', 'December', 'March', 'April', 'May', 'June', 'August', 'July', 'October', 'November', 'February', 'January'];
+// создаем ф-ию correctOrderMonths
+const correctOrderMonths = arr => {
+// проверяем длину массива
+    arr = orderMonths;
+    const correctArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    if (arr.length !== 12) {
+        
+    }
+}; */
+
+
