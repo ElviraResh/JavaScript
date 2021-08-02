@@ -164,3 +164,144 @@ console.log(calculateSum([3, 2, -10, 38, 0])); */
 }
 
 console.log(calculateSum([3, 2, -10, 38, 0])); */
+
+// сортировка - базовая алгоритмическая задача
+// в JS есть метод sort
+
+/* const numbers = [8, 3, 10, 15, 4];
+
+numbers.sort((a, b) => a - b);
+console.log(numbers);
+
+numbers.reverse();
+console.log(numbers); */
+
+// сортировка пузырьком
+// алгоритм состоит из повторяющихся проходов по сортируемому массиву, за каждый проход элементы сравниваются попарно и, если порядок в паре неверный, выполняется обмен элементов
+// при каждом обходе алгоритма по внутр. циклу, очередной наибольший элемент массива ставится на свое место в конце массива рядом с предудыщим (наибольшим элементом), а наименьший элемент сдвигается к началу массива
+/* const bubbleSort = (arr) => {
+    let stepsCount = arr.length - 1;
+    
+    let swapped; // значение которой показывает, был ли совершен во время перебора массива
+    // работает аналогично while, разница только в проверке, здесь она делается не до выполнения тела, а после
+    do {
+        swapped = false;
+        for(let i = 0; i < stepsCount; i++) {
+            if (arr[i] > arr[i + 1]) {
+                const temp = arr[i]; // временная константа, для хранения текущего элемента
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = true;
+            }
+        }
+        stepsCount -= 1;
+    } while (swapped); // продолжаем пока swapped === true
+    return arr;
+}
+
+console.log(bubbleSort([3, 2, 10, -2, 0, -10, 24, 7, -200])); */
+
+// структуры данных (стек)
+// структура данных - конкретный способ хранения и организации данных
+// структуры данных: списки, хеш-таблицы, деревья, графы, стек, очередь и т.д. 
+// стек - упорядоченная коллекция элементов, в которой добавление новых и удаление старых элементов всегда происходит с одного конца коллекции. Обычно его называют вершиной стека
+
+// работа со стеком включает в себя операции: 
+// добавить стек (push)
+// взять из стека (pop) 
+// вернуть элемент с вершины стека без удаления (peekBack)
+// проверить на пустоту (isEmpty)
+// вернуть размер
+
+/* const stacks = [];
+
+stacks.push(3);
+console.log(stacks); //[3]
+stacks.push('winterfall');
+console.log(stacks); //[3, 'winterfall']
+stacks.push(true);
+console.log(stacks); //[3, 'winterfall', true]
+
+const element1 = stacks.pop();
+console.log(element1); // true
+console.log(stacks);
+
+const element2 = stacks.pop(); // не только изменяет исходный массив, но и возвращает элемент, снятый со стека
+console.log(element2); // true
+console.log(stacks); */
+
+//деструктуризация - синтаксическая возможность раскладывать элементы массива, и не только, в отдельные константы или перемнные
+
+/* let age = 29;
+console.log(`i am ${age} years old`); */  //интерполяция
+
+/* const point = [3, 5];
+console.log(`${point[0]} : ${point[1]}`); // 3: 5 */
+
+/* const point = [3, 5];
+const [x, y] = point; // массив слева повторяет структуру с правого массива, но вместо значений используется id
+console.log(`${x} : ${y}`); // 3: 5 */
+
+// деструктуризация строк
+
+/* const [first, second, third] = 'two';
+console.log(first); // t
+console.log(second); // w
+console.log(third); // o */
+
+// декструктуризация в циклах
+/* const points = [
+    [4, 3],
+    [0, -3]
+]
+
+for (const [x, y] of points) {
+    console.log([x, y]);
+} */
+
+// rest оператор (rest - оставшиеся) позволяет свернуть часть элементов во время деструктуризации
+// он не может появляться нигде кроме конца массива
+// например, можно разложить массив на первый элемент и все остальные
+//const fruits = ['apple', 'orange', 'banana', 'pineaplle'];
+
+/* const [first, ...rest] = fruits; // ...rest -взять все элементы, которые остались от деструктуризации и поместить в массив rest
+console.log(first);
+console.log(rest); */
+
+//const [first, second, ...rest] = fruits;
+
+// если в массиве нет элементов, то rest возвращает пустой массив
+// при деструктуризации строк на выходе получаем массив, а нестроку
+
+// метод slice - нас нтересует только часть массива, но не важные первые элементы
+/* const fruits = ['apple', 'orange', 'banana', 'pineaplle'];
+const rest = fruits.slice(1); //возвращает новый массив, а не изменяет старый
+
+console.log(rest);
+console.log(first); */
+
+// spread оператор - растягивает элементы, с его помощью копируют или сливают массивы
+/* const russianCities = ['moscow', 'kazan'];
+//const cities = ['milan', 'rome', ...russianCities];
+const cities = russianCities.concat(['milan', 'rome']); // метод concat, добавляет элементы в начале массива
+console.log(cities);
+console.log(russianCities); */
+
+//отличие rest от spred 
+// rest появляется слева от знака *=*
+// spread появляется справа от знака *=*
+// spread оператор может появляться в любой части массива
+
+/* const russianCities = ['moscow', 'kazan'];
+const ukrainCities = ['kiev', 'odessa'];
+const cities = [...russianCities, ...ukrainCities];
+console.log(cities); */
+
+/* const russianCities = ['moscow', 'kazan'];
+// spread
+//const copy = [...russianCities];
+// без spread
+// const copy = russianCities.slice();
+copy.push('samara');
+console.log(copy); */
+
