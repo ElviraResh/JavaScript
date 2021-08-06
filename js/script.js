@@ -397,7 +397,21 @@ console.log(buildDefinitionList(definitions)); */
 // (строки в js не имееют встроенного метода для этого, поэтому напишем его сами)
 
 const text = 'hello ilia! how are you?';
-const capitalize = text => (text.length === 0) ? text : `${text[0].toUpperCase()}${text.slice(1)}`;
+const capitalize = text => {
+    const arr = text.split(' '); // разделение по словам
+    if (arr.length === 0) {
+        return arr;
+    } else {
+        for (let word of arr) {
+            let newWord = `${word[0].toUpperCase()}${word.slice(1)}`;
+            console.log(newWord);
+        }
+    }
+    //(arr.length === 0) ? arr : console.log(`${(arr[i])[0].toUpperCase()}${arr.slice(1)}`);
+}
+    
+
 console.log(capitalize(text));
-console.log(text);
+// console.log(text);
+
 
