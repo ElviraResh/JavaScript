@@ -30,7 +30,7 @@
 * Список параметров (принимаемых функций) заключенных в круглые скобки **()** и разделенных запятыми
 * Инструкции, которые будут выполнены после вызова функции, заключаются **{}**
 
-```sh
+```js
 function square(number) { //square - функция, number - параметр, который функция принимает в себя 
   return number * number; // инструкция return указывает на значение, кторое будет возвращено функцией
 }
@@ -40,7 +40,7 @@ function square(number) { //square - функция, number - параметр, 
 
 Если вы передадите объект как параметр (не примитив, например, *массив* или определяемые пользователем объекты), и функция изменит свойство переданного в нее объекта, это изменение будет видно и вне функции:
 
-```sh
+```js
 function myFunc(theObject) {
   theObject.make = 'Toyota';
 }
@@ -59,7 +59,7 @@ y = mycar.make; // y получает значение "Toyota"
 
 Функция вида "function declaration statement" по синтаксису является инструкцией (statement), еще функция может быть вида "function definition  expression". Такая функция может быть **анонимной** (она не имеет имени).
 
-```sh
+```js
 let square = function(number) { return number * number; };
 let x = square(4); // x получает значение 16
 ```
@@ -72,7 +72,7 @@ console.log(factorial(3));
 Copy to Clipboard
 Функции вида "function definition expression" удобны, когда функция передаётся аргументом другой функции. Следующий пример показывает функцию map, которая должна получить функцию первым аргументом и массив вторым.
 
-```sh
+```js
 function map(f, a) {
   let result = [], // Create a new Array
       i;
@@ -84,7 +84,7 @@ function map(f, a) {
 
 В следующим коде наша функция принимает функцию, которая является function definition expression, и выполняет его для каждого элемента принятого массива вторым аргументом.
 
-```sh
+```js
 function map(f, a) {
   let result = []; // Create a new Array
   let i; // Declare variable
@@ -104,7 +104,7 @@ console.log(cube);
 
 В JavaScript функция может быть объявлена с условием. Например, следующая функция будет присвоена переменной myFunc только, если num равно 0: 
 
-```sh
+```js
 let myFunc;
 if (num === 0) {
   myFunc = function(theObject) {
