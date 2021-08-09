@@ -399,19 +399,17 @@ console.log(buildDefinitionList(definitions)); */
 const text = 'hello ilia! how are you?';
 const capitalize = text => {
     const arr = text.split(' '); // разделение по словам
+    // проверяем массив на длину
     if (arr.length === 0) {
         return arr;
     } else {
+        const newArr = [];
         for (let word of arr) {
             let newWord = `${word[0].toUpperCase()}${word.slice(1)}`;
-            console.log(newWord);
+            newArr.push(newWord);
         }
+        return newArr.join(' '); // сбор элементов массива в строку
     }
-    //(arr.length === 0) ? arr : console.log(`${(arr[i])[0].toUpperCase()}${arr.slice(1)}`);
 }
-    
-
 console.log(capitalize(text));
-// console.log(text);
-
-
+console.log(text);
