@@ -157,14 +157,14 @@ for (const [key, value] of entries) {
 
 // реал-ть функцию, которая возвращает список ключей объекта, значение которых равно переданному значению
 
-const lessonMembers = {
+/* const lessonMembers = {
     syntax: 3,
     using: 2,
     foreach: 10,
     operations: 10,
     destructuting: 2,
     arra: 2,
-}
+} */
 
 // логика работы функции
 // 1. обход свойств объекта
@@ -209,7 +209,73 @@ console.log(obj1); // { a: 'a', b: 'v', c: 'c' } */
 
 // ограничение Object.assign() - оно выполняет только поверхностное слияние. вложенные объекты не сравниваются, а просто заменяются
 
-const obj1 = { a: {a: 1} };
+/* const obj1 = { a: {a: 1} };
 const obj2 = { a: {b: 1} };
 Object.assign(obj1, obj2);
-console.log(obj1); // { a: { b: 1 } }
+console.log(obj1); // { a: { b: 1 } } */
+
+// Клонирование (копирование)
+// При клонировании создается копия исходного объекта, т.е. новый объект, но наполненный теми же данными
+
+/* const user = { name: 'Tirion', email: 'support@yandex.ru', age: 44};
+// данные из user копируются во вновь созданный объект
+const copyOfUser = Object.assign({}, user);
+console.log(user);
+console.log(copyOfUser);
+
+console.log(user === copyOfUser); */ // false - получаем два разных объекта, имеющих одно и то же содержимое
+
+// spread и создание новых объектов
+// простое поверхностное копирование
+// создаем новые объекты вместо старых, основываясь на их обновлении
+/* const user = { name: 'Tirion', email: 'support@yandex.ru', age: 44};
+
+const data = { name: 'Tirion2', age: 45}; */
+
+/* const copyOfUser = Object.assign({}, user, data);
+console.log(copyOfUser); */
+
+/* const copyOfUser = {...user}; // спред-оператор раскладывает соответ-ий объект внутри нового объекта, с его помощью можно получить только копию
+console.log(copyOfUser); */
+
+// расширение объектов
+/* const user = { name: 'Vasya', age: 11};
+const newUser = {...user, married: true, age: 25,};
+console.log(newUser);  */
+
+/* const user = { name: 'Vasya', married: true, age: 25 };
+const user2 = { name: 'Irina', surname: 'Petrova' }; */
+
+//const mergedObject = {...user, ...user2}; // { name: 'Irina', married: true, age: 25, surname: 'Petrova' }
+//const mergedObject = {...user, married: false, ...user2}; // { name: 'Irina', married: false, age: 25, surname: 'Petrova' }
+//console.log(mergedObject);
+
+//деструктуризация - специальный синтаксис, позволяющий извлекать части из составных данных, это удобный способ раскладывать объекты на части
+/* const person = { firstName: 'Rasmus', lastName: 'Lerdorf', manager: true};
+
+const { firstName, manager } = person;
+console.log(firstName);
+console.log(manager); */
+
+/* const manager = false; // имя занято
+const person = { firstName: 'Rasmus', lastName: 'Lerdorf', manager: true};
+
+const { manager: isManager } = person;
+console.log(isManager); // true */
+
+/* const person = { firstName: 'Rasmus', lastName: 'Lerdorf'};
+
+console.log(person.manager);
+
+const { manager = false } = person;
+console.log(person);
+console.log(person.manager); */
+
+// rest-оператор 
+const person = { firstName: 'Rasmus', lastName: 'Lerdorf', manager: true};
+const { firstName, ...rest } = person;
+console.log(rest);
+
+// написать ф-ию, которая принимает кол-во минут, и возвращает строку, явл-ся временем в формате чч:мм
+// 1. если кол-во минут содержит больше 24 часов, то функция возвращает время, прошедшее с полуночи последних суток
+
