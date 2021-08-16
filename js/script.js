@@ -263,19 +263,38 @@ const person = { firstName: 'Rasmus', lastName: 'Lerdorf', manager: true};
 const { manager: isManager } = person;
 console.log(isManager); // true */
 
-/* const person = { firstName: 'Rasmus', lastName: 'Lerdorf'};
+/* const person = { firstName: 'Rasmus', lastName: 'Lerdorf' };
 
 console.log(person.manager);
 
 const { manager = false } = person;
-console.log(person);
-console.log(person.manager); */
+console.log(manager);
+console.log(person); */
 
 // rest-оператор 
-const person = { firstName: 'Rasmus', lastName: 'Lerdorf', manager: true};
+/* const person = { firstName: 'Rasmus', lastName: 'Lerdorf', manager: true};
 const { firstName, ...rest } = person;
-console.log(rest);
+console.log(rest); */
 
 // написать ф-ию, которая принимает кол-во минут, и возвращает строку, явл-ся временем в формате чч:мм
 // 1. если кол-во минут содержит больше 24 часов, то функция возвращает время, прошедшее с полуночи последних суток
 
+const translateOfTime = mins => {
+    const hours = Math.trunc(mins/60);
+    const minutes = mins % 60;
+    if (hours < 10 && minutes < 10) {
+        return `0${hours}:0${minutes}`;
+    } else if (hours < 10 && minutes >= 10) {
+        return `0${hours}:${minutes}`;
+    } else if (hours >= 10 && minutes < 10) {
+        return `${hours}:0${minutes}`;
+    } else {
+        return `${hours}:${minutes}`;
+    }
+    
+};
+
+console.log(translateOfTime(5));
+console.log(translateOfTime(15));
+console.log(translateOfTime(60));
+console.log(translateOfTime(600));
