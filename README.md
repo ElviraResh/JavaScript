@@ -1,4 +1,4 @@
-# Массивы 
+# [Массивы](https://y-doka.site/js/doka/arrays/) 
 *Массив* — это структура, в которой можно хранить коллекции элементов — чисел, строк, других массивов и т.д. Элементы нумеруются и хранятся в том порядке, в котором их поместили в массив. Элементов может быть сколько угодно, они могут быть какими угодно.
 
 Массивы очень похожи на нумерованные списки.
@@ -145,3 +145,24 @@ const catBreed = catProfile[1]
 const [name, breed] = catProfile
 console.log(name) // напечатает Maru
 ```
+
+### Методы
+* [```slice()```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+
+Метод возвращает неполную копию части массива в новый объект массива , выбранном из startк end ( endне включено) , где startи endпредставляют собой индекс элементов в этом массиве. Исходный массив не будет изменен.
+
+* [```splice()```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+Метод изменяет содержимое массива путем удаления или замены существующих элементов и / или добавление новых элементовна месте
+
+* [```pop()```](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+
+Метод удаляет последний элемент из массива и возвращает его значение.
+
+* [```concat()```](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+
+Метод возвращает новый массив, состоящий из массива, на котором он был вызван, соединённого с другими массивами и/или значениями, переданными в качестве аргументов.
+
+* [```join()```](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
+Метод объединяет все элементы массива (или массивоподобного объекта) в строку.
