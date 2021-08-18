@@ -43,9 +43,40 @@
 
 // обработчики вызываются один за другим, т.е. в том порядке в котором они прописаны
 
-const button = document.getElementById('myButton');
+// const button = document.getElementById('myButton');
 
-button.addEventListener('click', () => alert('Boom 1!'));
+// button.addEventListener('click', () => alert('Boom 1!'));
 
-// добавляю второй обработчик
-button.addEventListener('click', () => alert('Boom 2!'));
+// // добавляю второй обработчик
+// button.addEventListener('click', () => alert('Boom 2!'));
+
+// действия по умолчанию
+// const link = document.getElementById('myElement');
+
+// link.addEventListener('click', (e) => {
+//     // если этого не сделать, то браузер выполнит загрузку новой страницы
+//     e.preventDefault();
+//     alert(e.target.textContent);
+// });
+
+// CDN - content delivery network
+// обработчик событий меню
+
+// const links = document.querySelectorAll('.nav-link');
+// на каждую кнопку вешается событие
+// для этого обходим все ссылки и на каждую вешаем обработчик
+
+// links.forEach((link) => {
+//     link.addEventListener('click', () => {
+//         // нужно деактивировать предыдущий выбранный элемент
+//         links.forEach((link) => link.classList.remove('active'))
+//         // выделяем текущий
+//         link.classList.add('active');
+//     });
+// });
+
+// как правильно снять выделение с предыдущего элемента
+// первый способ - не используется. т.к. трудозатратный  
+// запоминать выделенный элемент и снимать с него нужный класс в момент клика по новому элементу
+// второй вариант
+// снятие выделения со всех элементов сразу, и не важно был ли элемент выделен или нет - т.е. операция удаления класса не приводит к ошибке, если у элемента не было класса, который удаляется 
