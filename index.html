@@ -8,11 +8,17 @@
 </head>
 <body>
     <h1>DOM</h1>
+    <!-- декларативный поиск по DOM-дереву -->
+
+    <!-- поиск по id -->
     <p id="content">Параграф</p>
+
+    <!-- поиск по class и тегу -->
     <div class="row">lorem</div>
     <div class="row">lorem</div>
     <div class="row">lorem</div>
 
+    <!-- поиск по селектору -->
     <ul id="menu">
         <li class="odd">
             <span>Первый</span>
@@ -24,6 +30,29 @@
             пункт
         </li>
     </ul>
+
+    <!-- метод matches -->
+    <p class="font-weight">This is Ozon!</p>
+
+    <!-- метод closest -->
+    <div class="row" id="one"></div>
+    <div class="row" id="two">
+        <div class="row" id="three">
+            <span>where is the closest?</span>
+        </div>
+    </div>
+
+    <!-- манипулирование DOM-деревом -->
+    <!-- innerHTML -->
+    <!-- textContent -->
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+    </ul>
+
+    <!-- управление узлами DOM -->
+    <a href="/pages/abot" class="simple-link" id="aboutPage">About</a>
+
     <script src="js/script.js"></script>
 </body>
 </html>
