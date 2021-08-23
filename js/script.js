@@ -80,3 +80,53 @@
 // запоминать выделенный элемент и снимать с него нужный класс в момент клика по новому элементу
 // второй вариант
 // снятие выделения со всех элементов сразу, и не важно был ли элемент выделен или нет - т.е. операция удаления класса не приводит к ошибке, если у элемента не было класса, который удаляется 
+
+// const context = function () {
+//     this.name = "Marcus";
+//     // генерирую объект city: name, year. в нем будет 3 метода
+//     const city = {
+//         name: "Kiev",
+//         year: 482, 
+//         f1: function() {
+//             return this.name; // прочитала Киев
+//         }, 
+//         f2: () => {
+//             return this.name; // Эта Киев не увидела, потому что это стрелочная функция
+//         },
+//         f3() {
+//             return this.name;  // т.к. объявлена как функция объекта. у нее и значение ключа в объекте f3 и имя функции f3
+//         }
+//     };
+//     return city;
+// }
+
+// const city = new context();
+// console.log('city.f1 = ' + city.f1());
+// console.log('city.f2 = ' + city.f2());
+// console.log('city.f3 = ' + city.f3());
+
+// области видимости. Контексты
+const cities = ['Athens', 'Roma', 'London', 'Beijeng', 'Kiev', 'Riga'];
+const f = s => s.length; //s- ф-ия, которая отображает массив строк cities в ее длину
+
+function f1() {
+    const cities = ['Athens', 'Roma'];
+    const f = s => s.toUpperCase();
+    console.dir( {cities} ); //{ cities: [ 'Athens', 'Roma' ] }
+    console.dir(cities.map(f)); //метод массива, создается новый массив городов с большими буквами // [ 'ATHENS', 'ROMA' ]
+
+    {
+        const f = s => s.toLowerCase(); // переопределяю ф-ию f, выводим базовый массив, но уже с маленькой буквы
+        console.dir( {cities} ); //{ cities: [ 'Athens', 'Roma' ] }
+        console.dir(cities.map(f)); // [ 'athens', 'roma' ]
+    }
+
+    {
+        const cities = ['London', 'Beijeng', 'Kiev'];
+        console.dir( {cities} ); //{ cities: [ 'London', 'Beijeng', 'Kiev' ] }
+        console.dir(cities.map(f)); // должен получить три города с большими буквами //[ 'LONDON', 'BEIJENG', 'KIEV' ]
+    }
+}
+f1();
+console.dir( {cities} ); //{ cities: [ 'Athens', 'Roma', 'London', 'Beijeng', 'Kiev', 'Riga' ] }
+console.dir(cities.map(f)); //[ 6, 4, 6, 7, 4, 4 ]
