@@ -1,8 +1,35 @@
-//Введение в JS
+function sieveOfEratosthenes(n) {
+  var arr = [],
+    p = 2;
 
-var a = 3;
-var b = 4;
+  for (var i = 0; i < n; i++) {
+    arr.push(true);
+  }
 
-const sumNumber = a + b;
+  while (p * p < n) {
+    for (var i = 2 * p; i < n; i += p) {
+      arr[i] = false;
+    }
 
-console.log(sumNumber);
+    for (i = p + 1; i <= n; i++) {
+      if (arr[i]) {
+        p = i;
+        break;
+      }
+    }
+  }
+
+  var simpleNumbers = [];
+
+  for (i = 2; i < n; i++) {
+    if (arr[i]) {
+      simpleNumbers.push(i);
+    }
+  }
+
+  console.log(simpleNumbers);
+
+  //return simpleNumbers;
+}
+
+sieveOfEratosthenes(120);
